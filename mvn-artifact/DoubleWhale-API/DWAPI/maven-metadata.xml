@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>DoubleWhale-API</groupId>
+  <artifactId>DWAPI</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20220410182026</lastUpdated>
+  </versioning>
+</metadata>
