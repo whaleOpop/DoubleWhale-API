@@ -12,8 +12,7 @@ public final class DWAPI extends JavaPlugin {
         // Plugin startup logic
         Logger log=null;
         log.info("Connection yep");
-        System.out.println(Test.name);
-        log.info(Test.name);
+
     }
 
     @Override
