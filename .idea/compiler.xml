@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="DW-API" />
+        <module name="DoubleWhale-API" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="DW-API" target="1.8" />
+      <module name="DoubleWhale-API" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
