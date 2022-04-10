@@ -2,12 +2,15 @@ package doublewhaleapi.dwapi;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.logging.Logger;
+
 public final class DWAPI extends JavaPlugin {
 
     @Override
     public void onEnable() {
         // Plugin startup logic
-
+        Logger log=null;
+        log.info("Connection yep");
     }
 
     @Override
