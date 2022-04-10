@@ -1,0 +1,4 @@
+name: DWAPI
+version: 1.0-SNAPSHOT
+main: doublewhaleapi.dwapi.DWAPI
+api-version: 1.13
