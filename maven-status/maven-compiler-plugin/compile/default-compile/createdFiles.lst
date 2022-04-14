@@ -1,2 +1,9 @@
+doublewhaleapi\dwapi\Serializers\GuildSerializer.class
+doublewhaleapi\dwapi\DataModels\CoinModel.class
+doublewhaleapi\dwapi\DataModels\PlayerModel.class
+doublewhaleapi\dwapi\Serializers\AbstractSerializer$1.class
 doublewhaleapi\dwapi\DWAPI.class
-doublewhaleapi\dwapi\Test.class
+doublewhaleapi\dwapi\DataModels\GuildModel.class
+doublewhaleapi\dwapi\Serializers\CoinSerializer.class
+doublewhaleapi\dwapi\Serializers\AbstractSerializer.class
+doublewhaleapi\dwapi\DataModels\GuildModel$RoleGuild.class
