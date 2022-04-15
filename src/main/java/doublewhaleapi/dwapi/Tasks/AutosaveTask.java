@@ -19,5 +19,7 @@ public class AutosaveTask extends BukkitRunnable {
 		DWAPI plugin = DWAPI.getInstance();
 		plugin.coinStorage.saveData();
 		plugin.guildStorage.saveData();
+		
+		plugin.getLogger().info("All serializers data was autosaved");
 	}
 }

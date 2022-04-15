@@ -1,6 +1,5 @@
 package doublewhaleapi.dwapi;
 
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
 
@@ -33,7 +32,7 @@ public final class DWAPI extends JavaPlugin {
 	/**
 	 * Plugin logger.
 	 */
-	private Logger logger = Bukkit.getLogger();
+	private Logger logger = getLogger();
 
 	/**
 	 * Autosave model data task.

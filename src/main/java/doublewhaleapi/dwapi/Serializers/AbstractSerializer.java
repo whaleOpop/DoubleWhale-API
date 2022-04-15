@@ -80,8 +80,7 @@ public class AbstractSerializer<T> {
 		// Loads JSON to data
 		try {
 			FileReader reader = new FileReader(fullPath);
-			Type gsonListType = new TypeToken<ArrayList<T>>() {
-			}.getType();
+			Type gsonListType = new TypeToken<ArrayList<T>>() {}.getType();
 			data = gson.fromJson(reader, gsonListType);
 
 			// Check null
