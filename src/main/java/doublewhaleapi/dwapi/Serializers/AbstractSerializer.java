@@ -28,7 +28,7 @@ public class AbstractSerializer<T> {
 	protected ArrayList<T> data;
 
 	/**
-	 * Simple constructor
+	 * Simple constructor.
 	 * 
 	 * @param jsonFileName Filename with .json to save data to
 	 * @param initialData  Typed ArrayList of objects to serialize may be null
@@ -41,7 +41,7 @@ public class AbstractSerializer<T> {
 	}
 
 	/**
-	 * Saves data to .json file via gson serialization
+	 * Saves data to .json file via gson serialization.
 	 */
 	public void saveData() {
 		try {
@@ -58,7 +58,7 @@ public class AbstractSerializer<T> {
 	}
 
 	/**
-	 * Loads data from .json file via gson deserealization
+	 * Loads data from .json file via gson deserealization.
 	 */
 	public void loadData() {
 		// Checks if directories in filePath exist, if not - creates
@@ -97,44 +97,5 @@ public class AbstractSerializer<T> {
 			e.printStackTrace();
 
 		}
-	}
-
-	/**
-	 * Tests if object is in ArrayList
-	 * 
-	 * @param object Object to test for in ArrayList
-	 * @return true if object was found in data ArrayList false otherwise
-	 */
-	public Boolean hasObject(T object) {
-		for (T iterator : data) {
-			if (iterator == object)
-				return true;
-		}
-		return false;
-	}
-
-	/**
-	 * Adds object to data ArrayList if it was not in it already
-	 * 
-	 * @param object Object to add
-	 * @return true if object was added false otherwise
-	 */
-	public Boolean addData(T object) {
-		if (!hasObject(object)) {
-			data.add(object);
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	 * Clears data ArrayList
-	 * 
-	 * @return Data array
-	 */
-	public ArrayList<T> flush() {
-		ArrayList<T> arr = data;
-		data.clear();
-		return arr;
 	}
 }
