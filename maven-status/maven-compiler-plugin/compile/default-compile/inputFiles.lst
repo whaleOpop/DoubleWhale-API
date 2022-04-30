@@ -1,8 +1,8 @@
 C:\DW-API\src\main\java\doublewhaleapi\dwapi\DWAPI.java
-C:\DW-API\src\main\java\doublewhaleapi\dwapi\Serializers\AbstractSerializer.java
+C:\DW-API\src\main\java\doublewhaleapi\dwapi\Vaults\GuildVault.java
 C:\DW-API\src\main\java\doublewhaleapi\dwapi\DataModels\CoinModel.java
-C:\DW-API\src\main\java\doublewhaleapi\dwapi\Serializers\GuildSerializer.java
+C:\DW-API\src\main\java\doublewhaleapi\dwapi\Serializers\Serializes.java
 C:\DW-API\src\main\java\doublewhaleapi\dwapi\Tasks\AutosaveTask.java
-C:\DW-API\src\main\java\doublewhaleapi\dwapi\Serializers\CoinSerializer.java
+C:\DW-API\src\main\java\doublewhaleapi\dwapi\Vaults\CoinVault.java
 C:\DW-API\src\main\java\doublewhaleapi\dwapi\DataModels\GuildModel.java
 C:\DW-API\src\main\java\doublewhaleapi\dwapi\DataModels\PlayerModel.java
