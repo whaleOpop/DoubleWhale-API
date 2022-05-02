@@ -1,15 +1,20 @@
 package doublewhaleapi.dwapi;
 
+import doublewhaleapi.dwapi.DataModels.CoinModel;
+import doublewhaleapi.dwapi.DataModels.GuildModel;
+
+import doublewhaleapi.dwapi.Serializers.Serializes;
+import doublewhaleapi.dwapi.Vaults.CoinVault;
+import doublewhaleapi.dwapi.Vaults.GuildVault;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
 
 import com.google.common.collect.Lists;
 
-import doublewhaleapi.dwapi.Serializers.CoinSerializer;
-import doublewhaleapi.dwapi.Serializers.GuildSerializer;
 import doublewhaleapi.dwapi.Tasks.AutosaveTask;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
@@ -42,8 +47,25 @@ public final class DWAPI extends JavaPlugin {
 	/**
 	 * Public model serializers DWAPI offers as storages.
 	 */
-	public CoinSerializer coinStorage = new CoinSerializer("Coins.json", null);
-	public GuildSerializer guildStorage = new GuildSerializer("Guilds.json", null);
+
+
+	@Nullable
+	public ArrayList<CoinModel> coinStorage= new ArrayList<CoinModel>();
+	@Nullable
+	public ArrayList<GuildModel> guildStorage= new ArrayList<GuildModel>();
+
+	public Serializes coinPath = new Serializes("plugins/DWdatabases/Coins.json"),
+					guildPath = new Serializes("plugins/DWdatabases/Coins.json");
+
+
+	public Serializes getCoinPath() {
+		return coinPath;
+
+	}
+	public Serializes getGuildPath() {
+		return guildPath;
+
+	}
 
 	/**
 	 * HashMap of plugin name against boolean enabled/disabled.<br>
@@ -59,8 +81,16 @@ public final class DWAPI extends JavaPlugin {
 	/**
 	 * Plugin startup method. Finds addons, registers EventListeners, loads data.
 	 */
+
+
+	 public CoinVault coinVault = new CoinVault(instance, coinStorage);
+	 public GuildVault guildVault = new GuildVault(instance,guildStorage);
 	@Override
 	public void onEnable() {
+
+
+
+
 		logger.info("DW Core Start");
 
 		// Save default config.yml
@@ -87,8 +117,8 @@ public final class DWAPI extends JavaPlugin {
 		instance = this;
 
 		// Initialize serializers
-		coinStorage.loadData();
-		guildStorage.loadData();
+		coinPath.deserialize();
+		guildPath.deserialize();
 
 		// Setup autosave task to run according to setting in plugin.yml
 		Long taskTime = getConfig().getLong("settings.autosaveTimeout");
@@ -102,16 +132,16 @@ public final class DWAPI extends JavaPlugin {
 	@Override
 	public void onDisable() {
 		autosaveTask.cancel();
+		coinPath.serialize(coinStorage);
+		guildPath.serialize(guildStorage);
 
-		coinStorage.saveData();
-		guildStorage.saveData();
 
 		logger.info("Storage data saved.");
 	}
 
 	/**
 	 * Singleton implementation.
-	 * 
+	 *
 	 * @return DWAPI plugin instance
 	 */
 	@Nonnull
@@ -121,7 +151,7 @@ public final class DWAPI extends JavaPlugin {
 
 	/**
 	 * Tests if DW addon is enabled against enabledAddons list.
-	 * 
+	 *
 	 * @param pluginName Plugin name
 	 * @return true if found, false if disabled or not found
 	 */
@@ -133,7 +163,7 @@ public final class DWAPI extends JavaPlugin {
 	/**
 	 * Sets enabled value of addon in enabledAddons HashMap.<br>
 	 * On any null values does not set enabledAddons.
-	 * 
+	 *
 	 * @param pluginName Plugin name
 	 * @param enabled    Boolean true or false
 	 */

@@ -2,6 +2,10 @@ package doublewhaleapi.dwapi.DataModels;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 /**
  * CoinModel class to save wallets to
@@ -9,7 +13,7 @@ import javax.annotation.Nullable;
  * @author BlackWarlow
  *
  */
-public class CoinModel {
+public class CoinModel extends ArrayList {
 	private String walletName;
 	private Boolean isGuild;
 	private Double coins;
@@ -156,4 +160,7 @@ public class CoinModel {
 
 		this.coins = coins;
 	}
+
+
+
 }

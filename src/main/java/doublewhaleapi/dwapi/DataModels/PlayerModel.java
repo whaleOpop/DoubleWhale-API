@@ -3,6 +3,8 @@ package doublewhaleapi.dwapi.DataModels;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import doublewhaleapi.dwapi.DataModels.GuildModel.RoleGuild;
 
 /**
@@ -12,8 +14,14 @@ import doublewhaleapi.dwapi.DataModels.GuildModel.RoleGuild;
  *
  */
 public class PlayerModel {
+	@SerializedName("name")
+	@Expose
 	private String name;
+	@SerializedName("active")
+	@Expose
 	private Boolean active;
+	@SerializedName("role")
+	@Expose
 	private RoleGuild role;
 
 	/**
